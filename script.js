@@ -29,19 +29,15 @@ function checkBoard() {
                     ++o;
                 }
             }
-            if (x == 3) {
-                document.getElementById("board").innerHTML = `Congrats, player 1 wins 🎉
-                <br> <button type="button" class="btn btn-primary" onclick="history.go(0)">Play again</button>`;
-            } else if (o == 3) {
-                document.getElementById("board").innerHTML = `Congrats, player 2 wins 🎉
-                <br>
-                <button type="button" class="btn btn-primary" onclick="history.go(0)">Play again</button>`;
-            }
+            if (x == 3 || o == 3) {
+                board.innerHTML = `Congrats player1 has: ${x} and player 2 has ${o} points <br> <button type="button" class="btn btn-primary" onclick="history.go(0)">Play again</button>`;
+                i = 8;
+            }    
         }
     }
     if (attempts == 0) {
-        document.getElementById("board").innerHTML = `Nobody wins :(
+        board.innerHTML = `Nobody wins :(
         <br>
         <button type="button" class="btn btn-primary" onclick="history.go(0)">Play again</button>`;
     }
-}   
+}     
